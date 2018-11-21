@@ -22,7 +22,7 @@ class Solution:
         :type str: str
         :rtype: int
         """
-        str = str.lstrip()   # 去除左边首部的空格
+        str = str.strip()   # 去除首尾的空格
 
         if str == None or str == " " or str == "":
             return 0
