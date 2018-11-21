@@ -104,3 +104,11 @@ class Solution:
 sol = Solution()
 num = sol.myAtoi(" +-2147483649 12")
 print(num)
+
+'''
+注意：
+1. 去除空格  
+2. 注意正负号
+3. 上下界溢出
+4. 非数字字符
+'''
