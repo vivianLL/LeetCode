@@ -38,6 +38,7 @@ class Solution:
 
 
         # # 二分法：时间复杂度O(nlgn) 88 ms, faster than 6.02%
+        # 不能保证找出所有重复的数字 不能确定是每个数字各出现一次还是某个数字出现两次
         # length = len(nums)
         # start = 0
         # end = length-1
@@ -86,17 +87,29 @@ class Solution:
         # return find
 
 
-        # 使用python标准库
-        a = collections.Counter(nums)  # 计数函数 Counter({3: 2, 1: 1, 4: 1, 6: 1, 2: 1, 5: 1})
-        print(a.get)
-        # find = max(a.keys(), key=a.get) # Counter 其实是dict 的一个子类，可以使用get方法
-        find = max(a, key=lambda i: a[i])
-        print(find)
-        return find
+        # # 使用python标准库
+        # a = collections.Counter(nums)  # 计数函数 Counter({3: 2, 1: 1, 4: 1, 6: 1, 2: 1, 5: 1})
+        # print(a.get)
+        # # find = max(a.keys(), key=a.get) # Counter 其实是dict 的一个子类，可以使用get方法
+        # find = max(a, key=lambda i: a[i])
+        # print(find)
+        # return find
+
+
+        # 重排数组交换顺序 改变了数组 时间复杂度O(n) 空间复杂度O(1) from《剑指offer》
+        for i in range(0,len(nums)):
+            while nums[i]!=i:
+                if nums[i] == nums[nums[i]]:
+                    print(nums[i])
+                    return nums[i]
+                temp = nums[i]
+                nums[i] = nums[temp]
+                nums[temp] = temp
+            i = i+1
 
 
 sol = Solution()
-list = [1,3,4,6,2,5,3]
+list = [1,2,4,6,2,5,3]
 num = sol.findDuplicate(list)
 print(num)
 
