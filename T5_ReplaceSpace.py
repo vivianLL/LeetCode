@@ -42,8 +42,6 @@ class Solution:
         return ''.join(res)  # 返回字符串
 
 
-
-
 # s = "We are happy. "
 s = '   '
 sol = Solution()
