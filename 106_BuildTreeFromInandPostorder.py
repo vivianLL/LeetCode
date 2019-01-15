@@ -32,7 +32,6 @@ class Solution:
             tree.right = self.buildTree(inorder[i+1:], postorder[i:-1])  # 注意：到倒数第二个是[i:-1]而非[i:-2]！
         return tree
 
-
 inorder = [4,7,2,1,5,3,8,6]
 postorder = [7,4,2,5,8,6,3,1]
 
