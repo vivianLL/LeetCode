@@ -107,7 +107,6 @@ class Solution:
                 nums[temp] = temp
             i = i+1
 
-
 sol = Solution()
 list = [1,2,4,6,2,5,3]
 num = sol.findDuplicate(list)
