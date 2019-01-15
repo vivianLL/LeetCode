@@ -75,7 +75,6 @@ class Solution:
 
             return self.buildTree_recur(0, len(preorder) - 1, 0)
 
-
 # preorder = [3,9,20,15,7]
 # inorder = [9,3,15,20,7]
 preorder = [1,2,4,7,3,5,6,8]
