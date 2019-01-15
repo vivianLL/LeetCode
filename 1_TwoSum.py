@@ -56,7 +56,6 @@ class Solution:
                 buff_dict[target - nums[i]] = i
 
 
-
 sol = Solution()
 sol.twoSum([2,7,3,15],5)
 sol.twoSum([3,2,4],6)
