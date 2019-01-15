@@ -22,7 +22,6 @@ class Solution:
             return []
         return self.printListFromTailToHead(listNode.next) + [listNode.val]  # python里面list型添加元素可以直接+[num]
 
-
 lNode1 = ListNode(1)
 lNode2 = ListNode(2)
 lNode3 = ListNode(3)
