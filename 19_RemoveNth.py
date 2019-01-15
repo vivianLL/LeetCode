@@ -61,7 +61,6 @@ class Solution:
 
         return head_node
 
-
 lNode1=ListNode(1)
 lNode2=ListNode(2)
 lNode3=ListNode(3)
