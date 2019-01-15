@@ -101,6 +101,7 @@ class Solution:
 #             return min
 #         return res
 
+
 sol = Solution()
 num = sol.myAtoi(" +-2147483649 12")
 print(num)
