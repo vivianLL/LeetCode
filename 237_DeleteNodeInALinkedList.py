@@ -30,3 +30,5 @@ lNode3.next=lNode4
 lNode4.next=lNode5
 sol = Solution()
 sol.deleteNode(lNode4)
+
+# 思路：不用遍历链表找到头结点。直接把下一个节点的内容复制到需要删除的节点上覆盖原有内容，再删除下一个节点即可。但这样没法删除，会造成内存泄漏。
