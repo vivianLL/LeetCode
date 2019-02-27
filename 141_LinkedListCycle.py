@@ -17,25 +17,29 @@ class Solution(object):
         :type head: ListNode
         :rtype: bool
         """
-        # 集合 时间复杂度O(n) 空间复杂度O(n)
-        val = set()
-        while head:
-            if head not in val:
-                val.add(head)  # 注意此处集合中应为链表的结点，而不能只是链表结点的值
-            else:
-                return True
-            head = head.next
-        return False
+        # # 集合 时间复杂度O(n) 空间复杂度O(n)
+        # val = set()
+        # while head:
+        #     if head not in val:
+        #         val.add(head)  # 注意此处集合中应为链表的结点，而不能只是链表结点的值
+        #     else:
+        #         return True
+        #     head = head.next
+        # return False
 
         # 快慢指针 时间复杂度O(n) 空间复杂度O(1)
-        fast = head
+        if not head:
+            return head
         slow = head
-        while fast and fast.next != None:
-            fast = fast.next.next
+        fast = head
+        while fast and fast.next:
             slow = slow.next
-            if fast == slow:
-                return True
-        return False
+            fast = fast.next.next
+            if slow == fast:
+                while slow != head:   # 头指针和slow同时出发，将会在入口节点处相遇
+                    head = head.next
+                    slow = slow.next
+                return slow
 
 lNode1=ListNode(1)
 lNode2=ListNode(2)
@@ -49,4 +53,4 @@ lNode4.next=lNode5
 sol = Solution()
 sol.hasCycle(lNode1)
 
-# 有没有环不能仅靠看有没有重复元素的值判断，还需要判断node.next
+# 参考网址：https://www.cnblogs.com/hiddenfox/p/3408931.html
