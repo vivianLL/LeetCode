@@ -17,7 +17,7 @@ class Solution(object):
         :type l2: ListNode
         :rtype: ListNode
         """
-        # # 借助列表重新排序，时间复杂度O(n) 空间复杂度O(n)
+        # # 借助列表重新排序，时间复杂度O(nlgn) 空间复杂度O(n)
         # if not (l1 or l2):
         #     return None
         # list1, list2 = [], []
@@ -28,7 +28,7 @@ class Solution(object):
         #     list2.append(l2)
         #     l2 = l2.next
         # mylist = (list1 + list2)
-        # mylist.sort(key=lambda ListNode: ListNode.val)     # list中放的ListNode对象，需要按ListNode对象的val属性排列.sorted是创建副本，sort改变原值
+        # mylist.sort(key=lambda ListNode: ListNode.val)     # 时间复杂度O(nlgn)，list中放的ListNode对象，需要按ListNode对象的val属性排列.sorted是创建副本，sort改变原值
         # for i in range(len(mylist) - 1):
         #     mylist[i].next = mylist[i + 1]
         # mylist[-1].next = None  # 一定要将原头结点的next设为none
