@@ -29,17 +29,15 @@ class Solution(object):
 
         # 快慢指针 时间复杂度O(n) 空间复杂度O(1)
         if not head:
-            return head
+            return False
         slow = head
         fast = head
         while fast and fast.next:
             slow = slow.next
             fast = fast.next.next
             if slow == fast:
-                while slow != head:   # 头指针和slow同时出发，将会在入口节点处相遇
-                    head = head.next
-                    slow = slow.next
-                return slow
+                return True
+        return False
 
 lNode1=ListNode(1)
 lNode2=ListNode(2)
@@ -51,6 +49,7 @@ lNode2.next=lNode3
 lNode3.next=lNode4
 lNode4.next=lNode5
 sol = Solution()
-sol.hasCycle(lNode1)
+ans = sol.hasCycle(lNode1)
+print(ans)
 
 # 参考网址：https://www.cnblogs.com/hiddenfox/p/3408931.html
